@@ -16,22 +16,36 @@ body {
 }
 
 /* =================================================================
-   1. Navigation Bar (Sticky & Glassmorphism)
+   1. Universal Header & Hamburger Navigation (All Pages)
    ================================================================= */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #e2e8f0;
   padding: 16px 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+header > a:first-child {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
   gap: 28px;
 }
 
-header a {
+.nav-menu a {
   text-decoration: none;
   color: #475569;
   font-weight: 500;
@@ -39,20 +53,29 @@ header a {
   transition: color 0.2s ease;
 }
 
-header a:first-child {
-  font-size: 22px;
-  font-weight: 800;
-  color: #0f172a;
-  letter-spacing: -0.5px;
-  margin-right: auto;
-}
-
-header a:hover {
+.nav-menu a:hover {
   color: #2563eb;
 }
 
+/* Hide Hamburger Toggle Button on Desktop */
+.menu-toggle {
+  display: none;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  font-size: 22px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #0f172a;
+  transition: all 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background: #e2e8f0;
+}
+
 /* =================================================================
-   2. Hero Section (Left: Stacked Text/Button, Right: Image)
+   2. Hero Section (Index Page Only)
    ================================================================= */
 .hero-section {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
@@ -66,7 +89,6 @@ header a:hover {
   margin: 0 auto;
 }
 
-/* Stacked container for heading, paragraph, and button on the left */
 .hero-content {
   flex: 1;
   display: flex;
@@ -110,7 +132,6 @@ header a:hover {
   box-shadow: 0 14px 24px -5px rgba(37, 99, 235, 0.4);
 }
 
-/* Right side image container */
 .hero-section img {
   flex: 1;
   max-width: 480px;
@@ -121,7 +142,7 @@ header a:hover {
 }
 
 /* =================================================================
-   3. Projects Section (Card Grid Layout)
+   3. Projects Section (Card Grid Layout for Index & Projects Pages)
    ================================================================= */
 .Projects-Section {
   max-width: 1200px;
@@ -263,8 +284,13 @@ body > p {
   color: #475569;
 }
 
+/* Contact specific styling support if multiple paragraphs exist */
+body > p + p {
+  margin-bottom: 10px;
+}
+
 /* =================================================================
-   5. Footer Styling (Fixed Columns with Headings Stacked Above Lists)
+   5. Universal Footer Section (All Pages)
    ================================================================= */
 footer {
   background: #ffffff;
@@ -311,7 +337,6 @@ footer ul li a:hover {
   color: #2563eb;
 }
 
-/* If any direct paragraphs are used in footer */
 footer p {
   font-size: 14px;
   color: #64748b;
@@ -319,7 +344,7 @@ footer p {
 }
 
 /* =================================================================
-   Responsive Mobile View Adjustments
+   Responsive Mobile Adjustments (Hamburger Menu & Breakpoints)
    ================================================================= */
 @media (max-width: 900px) {
   .hero-section {
@@ -335,5 +360,32 @@ footer p {
   
   .Projects-Section {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger button on mobile screens */
+  }
+
+  .nav-menu {
+    display: none; /* Hide navigation links by default on mobile */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0 10px 0;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 12px;
+  }
+
+  /* Display menu items when JS toggle activates the 'active' class */
+  .nav-menu.active {
+    display: flex;
   }
 }

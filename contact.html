@@ -4,13 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+     <header>
+        <a href="index.html">Nouvix</a>
+        
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        
+        <!-- Navigation Links -->
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">contact</a>
+        </nav>
+     </header>
+        <main>
     <h2>Contact Us:</h2>
     <p>Here are our contact details, You can reachout using the details given below.</p>
         <p>M Nouman Habib</p>
         <p>mnoumanhabib20@gmail.com</p>
         <p>+92 3456789101</p>
         <p>Islamabad, Pakistan</p>
+        </main>
+        <footer>
+        
+        <ul>
+            <li><h5>Menus</h5></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+
+        
+        <ul>
+            <li><h5>Contact</h5></li>
+            <li>M Nouman Habib</li>
+            <li>mnoumanhabib20@gmail.com</li>
+            <li>+92 3456789101</li>
+            <li>Islamabad, Pakistan</li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript for Mobile Hamburger Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            menu.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>

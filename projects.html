@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+     <header>
+        <a href="index.html">Nouvix</a>
+        
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        
+        <!-- Navigation Links -->
+        <nav class="nav-menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">contact</a>
+        </nav>
+     </header>
+     <main>
     <section class = "Projects-Section">
             <h2>Projects</h2>
             <p>Here are some of the projects we're proud to have worked on.</p>
@@ -33,9 +49,34 @@
                 <p>FinDash is a focused financial analytics workspace designed to turn complex reporting into clear, actionable insight.The challengeTeams needed one reliable place to...</p>
                 <button>Learn More...</button>
             </section>
-            <form action="about.html">
-                <button type="submit" class="my-button">Go to About Page</button>
-            </form>
         </section>
-</body>
+        </main>
+        <footer>
+        
+        <ul>
+            <li><h5>Menus</h5></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+
+        
+        <ul>
+            <li><h5>Contact</h5></li>
+            <li>M Nouman Habib</li>
+            <li>mnoumanhabib20@gmail.com</li>
+            <li>+92 3456789101</li>
+            <li>Islamabad, Pakistan</li>
+        </ul>
+    </footer>
+
+    <!-- JavaScript for Mobile Hamburger Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            menu.classList.toggle("active");
+        }
+    </script>
+  </body>
 </html>
